@@ -4,13 +4,17 @@
 print("Welcome to my SMITE quiz game. Answer the questions as they appear.")
 
 class Question:
-    def __init__(self, questionText, answer, multipleChoiceOptions=None):
-        self.questionText = questionText
+    """
+    function to initialise a question with
+    multiple choices
+    """
+    def __init__(self, question_text, answer, multiple_choice_options=None):
+        self.question_text = question_text
         self.answer = answer
-        self.multipleChoiceOptions = multipleChoiceOptions
+        self.multiple_choice_options = multiple_choice_options
     
     def __repr__(self):
-        return '{'+ self.questionText +','+ self.answer +', '+ str(self.multipleChoiceOptions) +'}'
+        return '{'+ self.question_text +','+ self.answer +', '+ str(self.multiple_choice_options) +'}'
 
 
 quizQuestions = [
@@ -20,15 +24,15 @@ quizQuestions = [
     ]
 
 for question in quizQuestions:
-    if(question.multipleChoiceOptions != None):
-        print(f"{question.questionText}?")
-        for option in question.multipleChoiceOptions:
+    if (question.multiple_choice_options != None):
+        print(f"{question.question_text}?")
+        for option in question.multiple_choice_options:
             print(option)
         userInput = input()
     else:
-        print(f"{question.questionText}?")
+        print(f"{question.question_text}?")
         userInput = input()
-    if(userInput.lower() == question.answer.lower()):
+    if (userInput.lower() == question.answer.lower()):
         print("Yes! Correct answer.")
     else:
         print(f"Sorry that was an incorrect answer. Answer is {question.answer}")
