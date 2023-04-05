@@ -25,7 +25,8 @@ player_details = []
 name = ''
 email = ''
 
-def check_first() -> str:
+
+def check_first_visit() -> str:
     """
     Checks to see if the player has played
     the game before
@@ -35,7 +36,28 @@ def check_first() -> str:
     response = '1. Yep \n2. Nope\n'
     responded = input(response).lower()
 
-    while responded not in ('1','y', '2', 'n'):
+    while responded not in ('1', 'y', '2', 'n'):
         print('Please choose an appropriate response: ')
         responded = input(response).lower()
         time.sleep(1)
+    
+    if responded in ('1', 'y'):
+        print('You answered yes\n')
+        time.sleep(2)
+        email_prompt()
+        time.sleep(1)
+        print(f'Your email is {email}\n')
+        time.sleep(1)
+        login_prompt()
+        register_new()
+        return True
+
+    elif responded in ('2', 'n'):
+        print('You answered no\n')
+        time.sleep(2)
+        email_prompt()
+        validate_email_address(email)
+        get_player_name()
+        return False
+        
+        
