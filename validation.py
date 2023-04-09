@@ -191,6 +191,21 @@ def total_of_scores():
     return scores_total
 
 
+def player_total_submit():
+    """
+    A function to loop through the spreadsheet and 
+    add each player from every column to get a total
+    sum of players that have submitted their score.
+    """
+    player_list = SCORES_SHEET.col_values(1)
+    player_total_submitted = 0
+    x = 1
+    for x in player_list:
+        player_total_submitted += 1
+
+    return player_total_submitted
+
+
 def reset_screen():
     """
     Resets the screen so new information
