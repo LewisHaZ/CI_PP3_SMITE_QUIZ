@@ -172,4 +172,54 @@ You must use: 1, 2 or 3 as your inputted answer\n""")
     
     time.sleep(1)
     reset_screen()
-    
+    scores_screen()
+
+
+def player_library():
+    """
+    A function to create an entity of the player info
+    to be used for the after quiz score screen
+    """
+    player_entity = {
+        'Name': val.name
+        'Score': str(score),
+        'Email': val.email
+    }
+    print('Name =' + player_entity['Name'])
+    print('Score =' + player_entity['Score'])
+    print('Email =' + player_entity['Email'])
+    time.sleep(2)
+    print('---------------------------------------------\n')
+    time.sleep(2)
+    print(f'Congratulations on completing the quiz! {player_object()}')
+    return 'Returning to nominal state\n'
+
+
+class Player:
+    """
+    Player class object that holds the information
+    the player needs to have inputted.
+    """
+    def __init__(self, name, email, score):
+        self.name = val.name
+        self.email = val.email
+        self.score = score
+
+
+def player_object
+    """
+    A function to create the player, it will include all
+    the information from the player class
+    """
+    player = Player(val.name, val.email, score)
+    return player.name
+
+
+def scores_screen():
+    """
+    A function the player is shown after the 
+    quiz is finished, the player can choose
+    to submit the score they achieved or go
+    back to the home page
+    """
+    print(player_library())
