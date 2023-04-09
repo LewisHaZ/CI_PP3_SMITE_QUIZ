@@ -80,7 +80,13 @@ def options_select() -> str
         title()
         play_quiz()
     
-
+def home_page():
+    """
+    A function to act as a back to home when a player exits
+    an options menu
+    """
+    title()
+    options_select()
 
 def how_to_play():
     """
