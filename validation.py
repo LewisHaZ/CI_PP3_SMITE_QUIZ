@@ -156,6 +156,20 @@ def player_add_name():
     register_new()
     time.sleep(1)
 
+def player_total():
+    """
+    A function to loop through the spreadsheet
+    and total up the players that have played
+    the game
+    """
+    player_list = PLAYERS_SHEET.col_values(1)
+    player_total = 0
+    x = 1
+    for x in player_list:
+        player_total += 1
+    return player_total
+
+
 
 def high_score():
 
