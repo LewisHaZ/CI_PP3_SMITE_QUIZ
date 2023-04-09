@@ -123,7 +123,29 @@ if you wish.\n""")
     
     input('Enter a key to exit the instructions.\n')
     reset_screen()
-    
+
+
+def stats_page():
+    """
+    A function that allows the player to
+    see various statistics such as average
+    score, highest score etc
+    """
+    print('Welcome: {name}'.format(name=val.name))
+    print('===========================================\n')
+    print('STATISTICS:\n')
+    time.sleep(2)
+    print(f'Highest score achieved: {val.high_score()}\n')
+    time.sleep(1)
+    print(f'Total of all player scores: {val.total_of_scores()}\n')
+    time.sleep(1)
+    print(f'Total players of the quiz: {val.player_total()}\n')
+    time.sleep(1)
+
+    input('Enter a key to exit the stats page:\n')
+    reset_screen()
+    home_page()
+
 
 
 def play_quiz(questions):
