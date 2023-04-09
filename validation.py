@@ -130,16 +130,45 @@ def player_add_name():
     name = input('\nWhat do you call yourself?\n')
 
     try:
-        if len(name) < 3:
+        if len(name) < 3 or len(name) > 15:
             raise ValueError(
-                """By gods, that name needs to be longer!"""
-            )
-        if len(name) > 15:
-            raise ValueError(
-                """By gods, that name needs to be shorter!"""
+                """ Must be a name that has more than 3
+                but less than 15 letters """
             )
 
+    except ValueError as e:
+        print(f'By gods! That name is not valid: {e}, \nTry again.')
+        time.sleep(1)
+        get_player_name()
+        return False
 
+    time.sleep(1)
+    reset_screen()
+    print(f'Greetings! {name}\n')
+    time.sleep(2)
+    print('Good luck with the Mythological quiz!')
+    time.sleep(1)
+    input('\nPress any key to continue:\n')
+    register_new()
+    time.sleep(1)
+
+def total_of_scores():
+    """
+    Calculates all the scores that player's have built up
+    during game time. 
+    """
+    score_col = SCORES_SHEET.col_values(2)
+    scores_total = 0
+
+    del score_col[0]
+    score_col = list(map(int, score_col))
+
+    for score in score_col:
+        total_of_scores += score
+    
+    return scores_total
+
+    
 def reset_screen():
     """
     Resets the screen so new information
