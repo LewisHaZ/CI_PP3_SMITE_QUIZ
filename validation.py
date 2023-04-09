@@ -106,7 +106,38 @@ def get_player_name():
         player_email_row = PLAYERS_SHEET.find(email).row
         player_name = PLAYERS_SHEET.row(player_email_row)[0]
         reset_screen()
-        print()
+        print(f'Greetings!\nHow do you do, {player_name}\n')
+        time.sleep(2)
+        print('Good luck with the Mythological quiz!')
+        time.sleep(1)
+        input('\nPress any key to continue:\n')
+        time.sleep(1)
+
+        name = player_name
+        return player_name, True
+    
+    except AttributeError:
+        print('\nEmail not found in the Records of Ragnarok, inputting now')
+        time.sleep(4)
+        player_add_name()
+        
+def player_add_name():
+    """
+    Asks for player to input their name so it can be saved
+    for their return next time
+    """
+    global name
+    name = input('\nWhat do you call yourself?\n')
+
+    try:
+        if len(name) < 3:
+            raise ValueError(
+                """By gods, that name needs to be longer!"""
+            )
+        if len(name) > 15:
+            raise ValueError(
+                """By gods, that name needs to be shorter!"""
+            )
 
 
 def reset_screen():
