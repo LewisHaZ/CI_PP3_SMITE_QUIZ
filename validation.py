@@ -87,6 +87,31 @@ def validate_email_address(email: str):
 
 
 def register_new():
+    """
+    Adds new player's email and name to a players database
+    on Google Sheets
+    """
+    player_details.append(name)
+    player_details.append(email)
+    PLAYERS_SHEET.append_row(player_details)
 
-        
-        
+def get_player_name():
+    """
+    Runs through the database to search for emails
+    used already and to output the player's name
+    """
+    global name
+    global player_name
+    try:
+        player_email_row = PLAYERS_SHEET.find(email).row
+        player_name = PLAYERS_SHEET.row(player_email_row)[0]
+        reset_screen()
+        print()
+
+
+def reset_screen():
+    """
+    Resets the screen so new information
+    can be displayed
+    """
+    os.system("cls" if os.name === "nt" else "clear")
