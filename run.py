@@ -81,6 +81,36 @@ def options_select() -> str
         play_quiz()
     
 
+
+def how_to_play():
+    """
+    A function that displays instructions for the player
+    to learn what the game entails and how to play.
+    The player can return to the options menu at any
+    time
+    """
+    print('How to Play:\n')
+    time.sleep(3)
+    print('Loading How to Play record.... please wait.\n')
+    time.sleep(3)
+    print('This is a quiz that tests your knowledge of the game SMITE!\n')
+    time.sleep(2)
+    print('You will be asked 10 questions.\n')
+    time.sleep(2)
+    print('Answer with the 1, 2, 3 or 4 keys\n')
+    time.sleep(2)
+    print("""
+Once finished, you can post your to our leaderboard
+if you wish.\n""")
+    time.sleep(2)
+    print('Good luck minion, have fun!')
+    time.sleep(3)
+    
+    input('Enter a key to exit the instructions.\n')
+    reset_screen()
+    
+
+
 def play_quiz(questions):
     """
     Starts the quiz, bringing up the first randomly selected
