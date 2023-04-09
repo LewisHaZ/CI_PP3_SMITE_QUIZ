@@ -1,6 +1,24 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+print"""
+   SSSSSSSSSSSSSSS MMMMMMMM               MMMMMMMMIIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTTEEEEEEEEEEEEEEEEEEEEEE
+ SS:::::::::::::::SM:::::::M             M:::::::MI::::::::IT:::::::::::::::::::::TE::::::::::::::::::::E
+S:::::SSSSSS::::::SM::::::::M           M::::::::MI::::::::IT:::::::::::::::::::::TE::::::::::::::::::::E
+S:::::S     SSSSSSSM:::::::::M         M:::::::::MII::::::IIT:::::TT:::::::TT:::::TEE::::::EEEEEEEEE::::E
+S:::::S            M::::::::::M       M::::::::::M  I::::I  TTTTTT  T:::::T  TTTTTT  E:::::E       EEEEEE
+S:::::S            M:::::::::::M     M:::::::::::M  I::::I          T:::::T          E:::::E             
+ S::::SSSS         M:::::::M::::M   M::::M:::::::M  I::::I          T:::::T          E::::::EEEEEEEEEE   
+  SS::::::SSSSS    M::::::M M::::M M::::M M::::::M  I::::I          T:::::T          E:::::::::::::::E   
+    SSS::::::::SS  M::::::M  M::::M::::M  M::::::M  I::::I          T:::::T          E:::::::::::::::E   
+       SSSSSS::::S M::::::M   M:::::::M   M::::::M  I::::I          T:::::T          E::::::EEEEEEEEEE   
+            S:::::SM::::::M    M:::::M    M::::::M  I::::I          T:::::T          E:::::E             
+            S:::::SM::::::M     MMMMM     M::::::M  I::::I          T:::::T          E:::::E       EEEEEE
+SSSSSSS     S:::::SM::::::M               M::::::MII::::::II      TT:::::::TT      EE::::::EEEEEEEE:::::E
+S::::::SSSSSS:::::SM::::::M               M::::::MI::::::::I      T:::::::::T      E::::::::::::::::::::E
+S:::::::::::::::SS M::::::M               M::::::MI::::::::I      T:::::::::T      E::::::::::::::::::::E
+ SSSSSSSSSSSSSSS   MMMMMMMM               MMMMMMMMIIIIIIIIII      TTTTTTTTTTT      EEEEEEEEEEEEEEEEEEEEEE
+ """
 print("Welcome to my SMITE quiz game. Answer the questions as they appear.")
 
 class Question:
