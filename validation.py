@@ -95,6 +95,8 @@ def register_new():
     player_details.append(email)
     PLAYERS_SHEET.append_row(player_details)
 
+
+
 def get_player_name():
     """
     Runs through the database to search for emails
@@ -121,6 +123,8 @@ def get_player_name():
         time.sleep(4)
         player_add_name()
         
+
+
 def player_add_name():
     """
     Asks for player to input their name so it can be saved
@@ -152,6 +156,10 @@ def player_add_name():
     register_new()
     time.sleep(1)
 
+
+def high_score():
+
+
 def total_of_scores():
     """
     Calculates all the scores that player's have built up
@@ -168,7 +176,7 @@ def total_of_scores():
     
     return scores_total
 
-    
+
 def reset_screen():
     """
     Resets the screen so new information
