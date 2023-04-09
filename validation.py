@@ -59,5 +59,34 @@ def check_first_visit() -> str:
         validate_email_address(email)
         get_player_name()
         return False
+
+def email_prompt():
+    """
+    Asks player for their email input
+    """
+    global email
+    email = input('Please enter your email address.\n')
+    time.sleep(1)
+    validate_email_address(email)
+    return email, True
+
+
+def validate_email_address(email: str):
+    """
+    Validates the player's email address.
+    """
+    try:
+        validate_email(email)
+        return True
+    
+    except EmailNotValidError as e:
+        print("\n" + str(e))
+        print("Email format incorrect, try again.\n")
+        email_prompt()
+        return False
+
+
+def register_new():
+
         
         
