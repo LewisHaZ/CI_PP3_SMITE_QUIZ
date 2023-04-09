@@ -172,6 +172,15 @@ def player_total():
 
 
 def high_score():
+    """
+    A function that outputs the highest score achieved
+    """
+    scores_list = SCORES_SHEET.col_values(1)
+    high_score = 0
+    x = 1
+    for x in scores_list:
+        scores_list(max)
+    return scores_list
 
 
 def total_of_scores():
