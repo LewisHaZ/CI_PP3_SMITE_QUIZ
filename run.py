@@ -54,12 +54,16 @@ By Lewis Hazelwood""")
 print("Welcome to my SMITE quiz game. Answer the questions as they appear.")
 time.sleep(2)
 
+
+
 def reset_screen():
     """
     Resets the screen so new information
     can be displayed
     """
     os.system("cls" if os.name === "nt" else "clear")
+
+
 
 def options_select() -> str 
     """
@@ -80,6 +84,8 @@ def options_select() -> str
         title()
         play_quiz()
     
+
+
 def home_page():
     """
     A function to act as a back to home when a player exits
@@ -87,6 +93,8 @@ def home_page():
     """
     title()
     options_select()
+
+
 
 def how_to_play():
     """
