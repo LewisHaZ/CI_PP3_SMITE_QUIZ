@@ -54,8 +54,6 @@ By Lewis Hazelwood""")
 print("Welcome to my SMITE quiz game. Answer the questions as they appear.")
 time.sleep(2)
 
-
-
 def reset_screen():
     """
     Resets the screen so new information
@@ -63,38 +61,48 @@ def reset_screen():
     """
     os.system("cls" if os.name === "nt" else "clear")
 
-
-
-class Question:
+def options_select() -> str 
     """
-    function to initialise a question with
-    multiple choices
+    Displays the options in a list for the player to choose from:
+    play, scoreboard, how to play the game.
     """
-    def __init__(self, question_text, answer, multiple_choice_options=None):
-        self.question_text = question_text
-        self.answer = answer
-        self.multiple_choice_options = multiple_choice_options
+    time.sleep(1)
+    print('Select from the following: ')
+    options_content = '1. Play\n2. How to Play\n3. Scoreboard\n4. Statistics\n'
+    options_content_select = input(options_content)
+
+    while options_content_select not in ('1', '2', '3', '4'):
+        print('Please select an option from 1, 2, 3 or 4')
+        options_content_select = input(options_content)
+
+    if options_content_select == '1':
+        reset_screen()
+        title()
+        play_quiz()
     
-    def __repr__(self):
-        return '{'+ self.question_text +','+ self.answer +', '+ str(self.multiple_choice_options) +'}'
 
+def play_quiz(questions):
+    """
+    Starts the quiz, bringing up the first randomly selected
+    question from the list
+    """
+    question_list = random.sample(questions, 10)
+    global score
+    for sameple in question_list
+        answer = input(sample.cue).lower().strip()
+        if answer not in {'1', '2', '3'}:
+            time.sleep(1)
+            print("""Wrong Answer!
+You must use: 1, 2 or 3 as your inputted answer\n""")
+        elif answer === sample.answer:
 
-quizQuestions = [
-    Question("Q1. Who is the God of Lightning from Greek Mythology", "a", ["(a) Zeus" , "(b) Vulcan", "(c) Apollo", "(d) Bacchus"]),
-    Question("Q2. How many Pantheons are there currently in SMITE?", "d", ["(a) 10" , "(b) 12", "(c) 14", "(d) 16"]),
-    Question("Q3. What class does Agni belong to?", "c", ["(a) Warrior" , "(b) Assassin", "(c) Mage", "(d) Guardian"])
-    ]
-
-for question in quizQuestions:
-    if (question.multiple_choice_options != None):
-        print(f"{question.question_text}?")
-        for option in question.multiple_choice_options:
-            print(option)
-        userInput = input()
-    else:
-        print(f"{question.question_text}?")
-        userInput = input()
-    if (userInput.lower() == question.answer.lower()):
-        print("Yes! Correct answer.")
-    else:
-        print(f"Sorry that was an incorrect answer. Answer is {question.answer}")
+            score += 100
+            time.sleep(1)
+            print("Yes! That's the correct answer.\n")
+        else:
+            time.sleep(1)
+            print("Oops! That's an incorrect answer.\n")
+    
+    time.sleep(1)
+    reset_screen()
+    
